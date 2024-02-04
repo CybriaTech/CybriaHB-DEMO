@@ -1,12 +1,99 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE HTML>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>CybriaHB Demo - Loading</title>
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="🌐 CybriaHB is a HyperBEAM Loading Service, This Is A Demo Version">
+    <meta name="author" content="CybriaTech">
+    <meta name="keywords" content="unblock, virtual browser, web browser, hyperbeam">
+    <title>CybriaHB Demo</title>
+  <style>
+body {
+  background-color: #0e0e0e;
+  color: #ffffff;
+  padding: 0;
+  margin: 0;
+}
 
-<body>
-  <iframe src="main.html" style="width: 100vw; height: 100vh; border: none;"></iframe>
+main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+      
+    .frame-area {
+        box-shadow: 0 0 5px #fff;
+        position: relative;
+        text-align: center;
+    }
+
+    .frame-frame {
+        border-radius: 5px;
+        border: none;
+        width: 600px;
+        height: 500px;
+        object-cover: fill;
+    }
+
+    .controls {
+        box-shadow: 0 0 5px #fff;
+        position: absolute;
+        border: 1px solid #fff;
+        top: 95%;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        background-color: #616161;
+        border-radius: 0 0 5px 5px;
+        height: 40px;
+    }
+
+    .frame-title {
+        font-family: 'Source Sans Pro', sans-serif;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 1.5em;
+        color: #fff;
+        margin: 0;
+    }
+
+    .fullscreen {
+        background: transparent;
+        font-size: 20px;
+        color: #fff;
+        cursor: pointer;
+        border: none;
+    }
+  </style>
+</head>
+<body style="overflow: hidden;">
+  <main>
+      <div class="frame-area">
+          <iframe src="main.html" class="frame-frame" allowfullscreen="true" id="frameIframe"></iframe>
+          <div class="controls">
+              <p class="frame-title">CybriaHB Demo</p>
+              <button class="fullscreen" onclick="toggleFullscreen()"><i class="fas fa-expand"></i></button>
+          </div>
+      </div>
+  </main>
+<script>
+  function toggleFullscreen() {
+      var iframe = document.getElementById('frameIframe');
+      if (iframe.requestFullscreen) {
+          iframe.requestFullscreen();
+      } else if (iframe.mozRequestFullScreen) {
+          iframe.mozRequestFullScreen();
+      } else if (iframe.webkitRequestFullscreen) {
+          iframe.webkitRequestFullscreen();
+      } else if (iframe.msRequestFullscreen) {
+          iframe.msRequestFullscreen();
+      }
+  }
+</script>
 </body>
 </html>
