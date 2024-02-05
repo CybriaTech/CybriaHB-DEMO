@@ -6,7 +6,7 @@
     <meta name="description" content="🌐 CybriaHB is a HyperBEAM Loading Service, This Is A Demo Version">
     <meta name="author" content="CybriaTech">
     <meta name="keywords" content="unblock, virtual browser, web browser, hyperbeam">
-      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
     <title>CybriaHB Demo</title>
   <style>
 body {
@@ -40,28 +40,27 @@ main {
 
     .controls {
         box-shadow: 0 0 5px #fff;
+        position: absolute;
         border: 1px solid #fff;
         top: 95%;
         left: 0;
         right: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         padding: 10px;
         background-color: #616161;
         border-radius: 0 0 5px 5px;
         height: 40px;
     }
 
-    .frame-title p {
+    .frame-title {
         font-family: 'Source Sans Pro', sans-serif;
         font-weight: bold;
         text-transform: uppercase;
         font-size: 1.5em;
         color: #fff;
         margin: 0;
-	z-index: 999;
-	display: flex;
-        align-items: center;
-	justify-content: flex-start;
-	position: fixed;
     }
 
     .fullscreen {
@@ -70,10 +69,6 @@ main {
         color: #fff;
         cursor: pointer;
         border: none;
-	display: flex;
-        align-items: center;
-	justify-content: flex-end;
-	position: fixed;
     }
   </style>
 </head>
@@ -94,10 +89,7 @@ main {
       <div class="frame-area">
           <iframe src="main.html" class="frame-frame" allowfullscreen="true" id="frameIframe"></iframe>
           <div class="controls">
-		  <div class="frame-title">
-	<p>CybriaHB Demo</p>
-		  </div>
-	      <button class="fullscreen" onclick="window.location.href='main.html';"><i class="fas fa-arrow-up-right-from-square"></i></button>
+              <p class="frame-title">CybriaHB Demo</p>
               <button class="fullscreen" onclick="toggleFullscreen()"><i class="fas fa-expand"></i></button>
           </div>
       </div>
