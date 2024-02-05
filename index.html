@@ -50,7 +50,7 @@ main {
         height: 40px;
     }
 
-    .frame-title {
+    .frame-title p {
         font-family: 'Source Sans Pro', sans-serif;
         font-weight: bold;
         text-transform: uppercase;
@@ -61,6 +61,7 @@ main {
 	display: flex;
         align-items: center;
 	justify-content: flex-start;
+	position: fixed;
     }
 
     .fullscreen {
@@ -72,6 +73,7 @@ main {
 	display: flex;
         align-items: center;
 	justify-content: flex-end;
+	position: fixed;
     }
   </style>
 </head>
@@ -92,7 +94,9 @@ main {
       <div class="frame-area">
           <iframe src="main.html" class="frame-frame" allowfullscreen="true" id="frameIframe"></iframe>
           <div class="controls">
-	<p class="frame-title">CybriaHB Demo</p>
+		  <div class="frame-title">
+	<p>CybriaHB Demo</p>
+		  </div>
 	      <button class="fullscreen" onclick="window.location.href='main.html';"><i class="fas fa-arrow-up-right-from-square"></i></button>
               <button class="fullscreen" onclick="toggleFullscreen()"><i class="fas fa-expand"></i></button>
           </div>
